@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Prestige</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="slogan">L’Art de Manger, Réinventé</h1>
+    </div>
+  </section>
+
+  <!--FESTIVAL SECTION -->
+  <section classe="Festival">
+    <div class = "festival-content">
+      <h2 class="Titre">Un Festival Bucal</h2>
+     </div>
+  </section>     
+
+  
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience">
+    <div class="exp-container">
+      <img src="{% static 'images/experience.jpg' %}" alt="Expérience Resto" class="exp-image slide-left">
+      <div class="exp-text">
+        <h3 class="slide-down">Une expérience culinaire inoubliable</h3>
+        <p class="slide-right">
+          Vivez une explosion de saveurs dans une ambiance chaleureuse.<br>
+          Nos chefs vous proposent des plats raffinés préparés avec passion et produits frais.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <script>
+   window.addEventListener('scroll', () => {
+  const image = document.querySelector('.slide-left');
+  const title = document.querySelector('.slide-down');
+  const text = document.querySelector('.slide-right');
+  const trigger = image.getBoundingClientRect().top;
+
+  if (trigger < window.innerHeight * 0.9) {
+  image.style.opacity = 1;
+  image.style.transform = 'translateX(0)';
+  
+  title.style.opacity = 1;
+  title.style.transform = 'translateY(0)';
+  
+  text.style.opacity = 1;
+  text.style.transform = 'translateX(0)';
+} else {
+  image.style.opacity = 0;
+  image.style.transform = 'translateX(-100px)';
+  
+  title.style.opacity = 0;
+  title.style.transform = 'translateY(-100px)';
+  
+  text.style.opacity = 0;
+  text.style.transform = 'translateX(150px)';
+}
+
+});
+
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 100vh;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.slogan {
+  color: white;
+  font-size: 2.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* ---------- EXPERIENCE ---------- */
+.experience {
+  background-color: #181818;
+  padding: 80px 20px;
+  margin-top: 80px; /* 👈 espace entre hero et expérience */
+}
+
+.exp-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 180px;  /* petit souffle entre image et texte */
+  padding: 60px 80px;  /* garde une bonne marge au-dessus et sur les côtés */
+}
+
+
+.exp-image {
+  width: 100%;
+  max-width: 1000px;  /* plus large */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+
+.exp-text {
+  flex: 1;
+  max-width: 600px;
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.exp-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.exp-text p {
+  font-size: 1.1rem;
+}
+.exp-text h2,
+.exp-text p {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+/* Animation plus marquée */
+.slide-down {
+  transform: translateY(-150px); /* Avant : -50px */
+  transition: all 1.2s ease-out;
+}
+
+.slide-right {
+  transform: translateX(200px); /* Avant : 100px */
+  transition: all 1.2s ease-out;
+}
+
+/* Les éléments texte avant apparition */
+.exp-text h2,
+.exp-text p {
+  opacity: 0;
+  transition: all 1.2s ease-out;
+}
+
+
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
